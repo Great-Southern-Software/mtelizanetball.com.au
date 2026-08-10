@@ -444,7 +444,7 @@ h2.title::after {
 }
 
 .strip h2.title { color: var(--white); }
-.strip a { color: var(--gold-soft); }
+.strip a:not(.btn) { color: var(--gold-soft); }
 
 /* Stat chips on home */
 .chips { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem; }
