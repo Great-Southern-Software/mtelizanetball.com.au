@@ -15,7 +15,7 @@ eyebrow: "Players"
 
 ## Optional club gear
 
-- Hooded windcheaters — with optional name embroidery.
+- Hooded windcheaters, with optional name embroidery.
 - Club socks.
 
 ## Ordering

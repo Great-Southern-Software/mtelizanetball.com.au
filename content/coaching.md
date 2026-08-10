@@ -5,7 +5,7 @@ layout: page
 eyebrow: "Come coach with us"
 ---
 
-Every season we field over 20 teams — and every one of them needs a coach. Filling the full coaching roster is always a challenge, and we'd love your help.
+Every season we field over 20 teams, and every one of them needs a coach. Filling the full coaching roster is always a challenge, and we'd love your help.
 
 ## Who can coach?
 
@@ -13,7 +13,7 @@ Everyone brings something to the role:
 
 - **Parents** who want to be part of their kids' netball.
 - **Experienced players** ready to give back to the game.
-- **New coaches** keen to learn — we'll get you started.
+- **New coaches** keen to learn. We'll get you started.
 - **Accredited coaches** looking for a fun, friendly club.
 
 ## How we support you

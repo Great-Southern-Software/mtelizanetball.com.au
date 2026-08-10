@@ -13,7 +13,7 @@ Registration for **season 2026** is now open through NetballConnect.
 
 ## Key dates
 
-Keep across club and FDNA events for the season — training start, first games, holiday breaks and finals.
+Keep across club and FDNA events for the season: training start, first games, holiday breaks and finals.
 
 [Calendar of events]({=site.url('key-dates')})
 

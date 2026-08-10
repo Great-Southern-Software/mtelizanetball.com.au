@@ -1,6 +1,6 @@
 ---
 title: "Players"
-description: "Everything you need to take the court with MENC — game times, uniforms and training."
+description: "Everything you need to take the court with MENC: game times, uniforms and training."
 layout: page
 eyebrow: "Take the court"
 ---
@@ -9,7 +9,7 @@ eyebrow: "Take the court"
 
 FDNA fixtures, game times and courts for the winter season are published on the association's fixture portal.
 
-[Find your game time](https://websites.sportstg.com/assoc_page.cgi?c=0-44-0-0-0&a=COMPS&seasonID=6018660) — check on Friday evening for final court allocations.
+[Find your game time](https://websites.sportstg.com/assoc_page.cgi?c=0-44-0-0-0&a=COMPS&seasonID=6018660). Check on Friday evening for final court allocations.
 
 ## Uniforms
 

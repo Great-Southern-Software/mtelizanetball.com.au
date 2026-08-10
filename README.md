@@ -1,4 +1,4 @@
-# Mt Eliza Netball Club — Website
+# Mt Eliza Netball Club Website
 
 Static site for [mtelizanetball.com.au](https://www.mtelizanetball.com.au), built with
 [Quarkus Roq](https://iamroq.dev/) and deployed to GitHub Pages.

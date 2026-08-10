@@ -5,7 +5,7 @@ layout: page
 eyebrow: "About"
 ---
 
-The quickest way to reach the club is by email — pick the right person below and we'll get back to you as soon as we can.
+The quickest way to reach the club is by email. Pick the right person below and we'll get back to you as soon as we can.
 
 <div class="contact-grid">
   <div class="contact-card">

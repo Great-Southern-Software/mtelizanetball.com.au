@@ -1,6 +1,6 @@
 ---
 title: "Training"
-description: "Schedules, venues and what to bring — training is where players grow their skills and teams find their rhythm."
+description: "Schedules, venues and what to bring to training at MENC."
 layout: page
 eyebrow: "Players"
 ---
@@ -17,7 +17,7 @@ Training is an important part of developing players' netball skills as well as d
 | Thursday | Under 11s | 4:00 – 5:00 pm |
 | Friday | NetSetGO | 4:00 – 5:00 pm |
 
-> Training times may alter due to coach and court availability — exact times are confirmed at the beginning of each season.
+> Training times may alter due to coach and court availability. Exact times are confirmed at the beginning of each season.
 
 ## Where we train
 
@@ -33,7 +33,7 @@ Our teams train at the club courts located behind the Community Centre in **Howa
 
 ## What to bring
 
-- **Correct footwear** — runners or sneakers that give the right amount of support to minimise the risk of injury. Players without proper footwear can't take part, and the club accepts no liability for injuries where incorrect footwear is worn.
-- **A full drink bottle** — every session, no exceptions.
+- **Correct footwear**: runners or sneakers that give the right amount of support to minimise the risk of injury. Players without proper footwear can't take part, and the club accepts no liability for injuries where incorrect footwear is worn.
+- **A full drink bottle** for every session.
 
 Coaches maintain a duty of care at training and appreciate parents' support. In bad weather, your coach will decide whether training goes ahead and let the team know.
