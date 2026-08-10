@@ -1,0 +1,28 @@
+---
+title: "Latest News"
+description: "What's happening at Mt Eliza Netball Club."
+layout: default
+---
+{@io.quarkiverse.roq.frontmatter.runtime.model.Page page}
+{@io.quarkiverse.roq.frontmatter.runtime.model.Site site}
+<section class="page-banner">
+  <div class="container">
+    <p class="eyebrow">Club news</p>
+    <h1>{=page.title}</h1>
+    <p>{=page.description}</p>
+  </div>
+</section>
+<main class="section">
+  <div class="container">
+    <div class="news-list">
+      {#for post in site.collections.news}
+      <article class="news-item">
+        <time datetime="{=post.date.isoDate}">{=post.date.format('d MMMM yyyy')}</time>
+        <h3><a href="{=post.url}">{=post.title}</a></h3>
+        <p>{=post.description ?: post.contentAbstract(40)}</p>
+      </article>
+      {/for}
+    </div>
+    <p style="margin-top: 2rem">For day-to-day updates, follow us on <a href="https://www.facebook.com/mtelizanetballclub">Facebook</a>.</p>
+  </div>
+</main>

@@ -1,0 +1,44 @@
+{@io.quarkiverse.roq.frontmatter.runtime.model.Site site}
+<header class="site-header">
+  <div class="container bar">
+    <a class="brand" href="{=site.url}">
+      <svg width="38" height="38" viewBox="0 0 64 64" aria-hidden="true">
+        <circle cx="32" cy="32" r="30" fill="#C8102E"/>
+        <g fill="none" stroke="#FAF6F0" stroke-width="2.5">
+          <circle cx="32" cy="32" r="30"/>
+          <path d="M12 10c10 12 10 32 0 44M52 10c-10 12-10 32 0 44M4 26c18 8 38 8 56 0M4 38c18-8 38-8 56 0"/>
+        </g>
+        <path fill="#F2A900" d="M32 22l3.1 6.7 7.4.9-5.5 5 1.5 7.3L32 38.2l-6.5 3.7 1.5-7.3-5.5-5 7.4-.9z"/>
+      </svg>
+      <span class="name">Mt Eliza Netball Club<small>Est. 1968 &middot; FDNA</small></span>
+    </a>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle-input" aria-label="Toggle menu">
+    <label for="nav-toggle" class="nav-toggle"><span></span></label>
+    <nav class="site-nav" aria-label="Main navigation">
+      <ul>
+        <li><a href="{=site.url}">Home</a></li>
+        <li class="open">
+          <a href="{=site.url('players')}">Players</a>
+          <ul>
+            <li><a href="{=site.url('training')}">Training</a></li>
+            <li><a href="{=site.url('season')}">Season Info</a></li>
+            <li><a href="{=site.url('uniforms')}">Uniforms</a></li>
+          </ul>
+        </li>
+        <li><a href="{=site.url('coaching')}">Coaching</a></li>
+        <li><a href="{=site.url('umpiring')}">Umpiring</a></li>
+        <li><a href="{=site.url('key-dates')}">Key Dates</a></li>
+        <li><a href="{=site.url('news')}">News</a></li>
+        <li class="open">
+          <a href="{=site.url('about')}">About</a>
+          <ul>
+            <li><a href="{=site.url('policies')}">Policies</a></li>
+            <li><a href="{=site.url('contact')}">Contact</a></li>
+          </ul>
+        </li>
+        <li><a class="btn-register" href="https://registration.netballconnect.com/userRegistration?organisationId=799dc8d1-75f6-465b-98e5-0dffe8ced073&amp;competitionId=afa1cda0-bfde-40cf-9f12-b7c144693684">Register 2026</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<div class="trim-band" role="presentation"></div>

@@ -1,0 +1,18 @@
+---
+layout: default
+---
+{@io.quarkiverse.roq.frontmatter.runtime.model.DocumentPage page}
+{@io.quarkiverse.roq.frontmatter.runtime.model.Site site}
+<section class="page-banner">
+  <div class="container">
+    <p class="eyebrow">Club news</p>
+    <h1>{=page.title}</h1>
+  </div>
+</section>
+<main class="section">
+  <article class="container prose">
+    <p class="article-meta"><time datetime="{=page.date.isoDate}">{=page.date.format('d MMMM yyyy')}</time></p>
+    {#insert /}
+    <p><a href="{=site.url('news')}">&larr; All news</a></p>
+  </article>
+</main>
