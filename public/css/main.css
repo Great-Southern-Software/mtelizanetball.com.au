@@ -1,15 +1,19 @@
 /* ==========================================================================
    Mt Eliza Netball Club — design system
-   Palette drawn from the club uniform: jersey red, trim black, star gold.
+   Palette sampled from the club logo: ball red, wordmark black, star gold.
+   --red is the logo red, used for fills, rules and brand surfaces. It is a
+   touch too light to carry text, so links, small caps and white-on-red
+   buttons use --red-ink, the nearest shade that still clears WCAG AA.
    ========================================================================== */
 
 :root {
-  --red: #C8102E;
-  --red-dark: #9E0B24;
+  --red: #EB2427;
+  --red-ink: #D81F22;
+  --red-dark: #A81417;
   --black: #1B1519;
   --ink: #241E21;
-  --gold: #F2A900;
-  --gold-soft: #FFC94A;
+  --gold: #ECB84A;
+  --gold-soft: #F7D488;
   --chalk: #FAF6F0;
   --white: #FFFFFF;
   --line: #E8E0D5;
@@ -42,7 +46,7 @@ body {
 
 img { max-width: 100%; display: block; }
 
-a { color: var(--red); }
+a { color: var(--red-ink); }
 a:hover { color: var(--red-dark); }
 
 :focus-visible {
@@ -63,7 +67,7 @@ a:hover { color: var(--red-dark); }
 .trim-band {
   height: 18px;
   background-color: var(--black);
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='54' height='18' viewBox='0 0 54 18'%3E%3Cpath fill='%23F2A900' d='M27 3l1.9 4.1 4.5.5-3.3 3 .9 4.4-4-2.2-4 2.2.9-4.4-3.3-3 4.5-.5z'/%3E%3Cpath fill='%23C8102E' d='M0 8h10v2H0zM44 8h10v2H44z'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='54' height='18' viewBox='0 0 54 18'%3E%3Cpath fill='%23ECB84A' d='M27 3l1.9 4.1 4.5.5-3.3 3 .9 4.4-4-2.2-4 2.2.9-4.4-3.3-3 4.5-.5z'/%3E%3Cpath fill='%23EB2427' d='M0 8h10v2H0zM44 8h10v2H44z'/%3E%3C/svg%3E");
   background-repeat: repeat-x;
   background-position: center;
 }
@@ -93,7 +97,12 @@ a:hover { color: var(--red-dark); }
   color: var(--white);
 }
 
-.brand svg { flex: none; }
+.brand .mark {
+  flex: none;
+  display: block;
+  height: 3.9rem;
+  width: auto;
+}
 
 .brand .name {
   font-family: var(--font-display);
@@ -204,7 +213,7 @@ a:hover { color: var(--red-dark); }
 }
 
 .btn-register {
-  background: var(--red);
+  background: var(--red-ink);
   color: var(--white) !important;
   padding: 0.55rem 1.1rem !important;
   border-radius: 999px;
@@ -268,7 +277,7 @@ a:hover { color: var(--red-dark); }
   inset: 0;
   background: linear-gradient(100deg,
       rgba(27, 21, 25, 0.92) 0%,
-      rgba(158, 11, 36, 0.72) 45%,
+      rgba(168, 20, 23, 0.72) 45%,
       rgba(27, 21, 25, 0.25) 100%);
 }
 
@@ -334,7 +343,7 @@ a:hover { color: var(--red-dark); }
 .btn-outline { border-color: rgba(255, 255, 255, 0.7); color: var(--white); }
 .btn-outline:hover { border-color: var(--gold); color: var(--gold-soft); }
 
-.btn-red { background: var(--red); color: var(--white); }
+.btn-red { background: var(--red-ink); color: var(--white); }
 .btn-red:hover { background: var(--red-dark); color: var(--white); }
 
 /* --------------------------------------------------------------------------
@@ -403,7 +412,7 @@ h2.title::after {
   letter-spacing: 0.25em;
   text-transform: uppercase;
   font-size: 0.8rem;
-  color: var(--red);
+  color: var(--red-ink);
   margin: 0 0 0.5rem;
 }
 
@@ -588,12 +597,12 @@ h2.title::after {
   letter-spacing: 0.2em;
   text-transform: uppercase;
   font-size: 0.8rem;
-  color: var(--red);
+  color: var(--red-ink);
 }
 
 .news-item h3 { margin: 0.35rem 0 0.5rem; font-size: 1.35rem; }
 .news-item h3 a { text-decoration: none; color: var(--ink); }
-.news-item h3 a:hover { color: var(--red); }
+.news-item h3 a:hover { color: var(--red-ink); }
 
 .article-meta {
   font-family: var(--font-display);
@@ -601,7 +610,7 @@ h2.title::after {
   letter-spacing: 0.2em;
   text-transform: uppercase;
   font-size: 0.85rem;
-  color: var(--red);
+  color: var(--red-ink);
   margin-bottom: 1rem;
 }
 
@@ -660,6 +669,16 @@ h2.title::after {
   color: var(--gold);
   font-size: 1rem;
   margin: 0 0 0.85rem;
+}
+
+.site-footer .footer-brand {
+  margin-bottom: 1.1rem;
+}
+
+.site-footer .footer-brand img {
+  display: block;
+  width: 9.5rem;
+  height: auto;
 }
 
 .site-footer ul { list-style: none; margin: 0; padding: 0; }
