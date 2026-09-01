@@ -842,8 +842,41 @@ h2.title::after {
 .contact-card a { word-break: break-all; }
 
 /* --------------------------------------------------------------------------
-   Footer
+   Sponsors — logo band at the foot of the home page. White ground so the
+   JPG logos (white boxes) sit invisibly; heights are eyeballed per logo so
+   wide wordmarks and stacked marks carry the same visual weight.
    -------------------------------------------------------------------------- */
+.sponsors {
+  background: var(--white);
+  border-top: 1px solid var(--line);
+}
+
+.sponsor-logos {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem 3.5rem;
+}
+
+.sponsor-logos li { flex: none; }
+
+.sponsor-logos img {
+  display: block;
+  height: 3.25rem;
+  width: auto;
+  max-width: 100%;
+}
+
+.sponsor-logos .lg img { height: 4.5rem; }
+
+@media (max-width: 50rem) {
+  .sponsor-logos { gap: 1.5rem 2.25rem; }
+  .sponsor-logos img { height: 2.5rem; }
+  .sponsor-logos .lg img { height: 3.5rem; }
+}
 .site-footer {
   background: var(--black);
   color: rgba(255, 255, 255, 0.85);
