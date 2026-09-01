@@ -356,6 +356,16 @@ a:hover { color: var(--red-dark); }
 
 .hero .actions { display: flex; flex-wrap: wrap; gap: 0.85rem; }
 
+.hero .flyer { margin-top: 2rem; max-width: 20rem; }
+
+.hero .flyer img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
 /* Buttons */
 .btn {
   display: inline-block;
