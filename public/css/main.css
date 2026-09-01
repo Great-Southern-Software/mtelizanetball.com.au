@@ -356,16 +356,6 @@ a:hover { color: var(--red-dark); }
 
 .hero .actions { display: flex; flex-wrap: wrap; gap: 0.85rem; }
 
-.hero .flyer { margin-top: 2rem; max-width: 20rem; }
-
-.hero .flyer img {
-  display: block;
-  width: 100%;
-  height: auto;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-}
-
 /* Buttons */
 .btn {
   display: inline-block;
@@ -391,6 +381,169 @@ a:hover { color: var(--red-dark); }
 
 .btn-red { background: var(--red-ink); color: var(--white); }
 .btn-red:hover { background: var(--red-dark); color: var(--white); }
+
+/* --------------------------------------------------------------------------
+   Spring season promo — the club flyer rebuilt as a native section.
+   Cream flyer paper, brush-stroke corners, tricolor display word, black
+   brush band and script accents echo the printed flyer one-for-one.
+   -------------------------------------------------------------------------- */
+.spring {
+  position: relative;
+  background: #FAF2E5;
+  overflow: hidden;
+  padding: 5rem 0;
+}
+
+/* Brush-stroke corners, as on the printed flyer */
+.spring::before,
+.spring::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  width: 300px;
+  height: 300px;
+  pointer-events: none;
+  background-repeat: no-repeat;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cg stroke-linecap='round'%3E%3Cpath d='M-50 130L190 -110' stroke='%23EB2427' stroke-width='64'/%3E%3Cpath d='M-40 200L230 -70' stroke='%23ECB84A' stroke-width='30'/%3E%3Cpath d='M-30 255L260 -35' stroke='%231B1519' stroke-width='9'/%3E%3C/g%3E%3C/svg%3E");
+}
+.spring::before { top: -45px; left: -45px; }
+.spring::after { bottom: -45px; right: -45px; transform: rotate(180deg); }
+
+.spring .doodle { position: absolute; z-index: 1; pointer-events: none; }
+.doodle-star-gold { top: 4.5rem; right: 7%; transform: rotate(-12deg); }
+.doodle-star-red { bottom: 3.5rem; left: 4%; transform: rotate(14deg); }
+
+.spring-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.spring-kicker {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.4rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--ink);
+  transform: rotate(-2deg);
+  margin: 0;
+}
+
+.spring-word { margin: 0 0 1.1rem; transform: rotate(-2deg); }
+
+.spring-word span[aria-hidden] {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(4rem, 10vw, 6.75rem);
+  line-height: 0.9;
+  letter-spacing: 0.02em;
+}
+
+.spring-word .c1 { color: var(--red); }
+.spring-word .c2 { color: var(--gold); }
+.spring-word .c3 { color: var(--black); }
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* Black brush band — uneven radii keep the painted feel */
+.spring-band {
+  display: inline-block;
+  background: var(--black);
+  color: var(--white);
+  padding: 0.55rem 1.1rem;
+  border-radius: 3px 14px 4px 12px / 10px 4px 12px 5px;
+  transform: rotate(-1.5deg);
+  font-size: 1.05rem;
+  line-height: 1.45;
+  max-width: 29rem;
+  margin: 0 0 1rem;
+}
+
+.spring-band strong { color: var(--gold); }
+
+.spring-script {
+  font-family: "Caveat", "Comic Sans MS", cursive;
+  font-weight: 700;
+  font-size: clamp(2.1rem, 4.5vw, 2.7rem);
+  line-height: 1.05;
+  color: var(--red-ink);
+  transform: rotate(-2deg);
+  margin: 0 0 1.25rem;
+}
+
+.spring-body { max-width: 30rem; margin: 0 0 1.5rem; }
+.spring-body strong { color: var(--red-ink); }
+
+.spring-when {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  border-top: 4px dotted var(--red);
+  padding-top: 1.4rem;
+  margin: 0 0 1.75rem;
+  max-width: 30rem;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.35rem;
+  line-height: 1.15;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.spring-when svg { flex: none; }
+.spring-when strong { color: var(--red-ink); }
+
+.spring .actions { display: flex; flex-wrap: wrap; gap: 0.85rem; }
+
+.btn-paper { border-color: var(--black); color: var(--black); }
+.btn-paper:hover { background: var(--black); color: var(--gold-soft); }
+
+.spring-welcome {
+  margin: 1.9rem 0 0;
+  font-size: clamp(1.7rem, 3.5vw, 2.1rem);
+  color: var(--ink);
+  max-width: 27rem;
+}
+
+.spring-welcome .hearts { color: var(--red); }
+
+/* Fade the crop's edges into the paper so the artwork sits printed-on,
+   not pasted-on */
+.spring-art img {
+  width: 100%;
+  height: auto;
+  -webkit-mask-image:
+    linear-gradient(to right, transparent 0, #000 24px, #000 calc(100% - 24px), transparent 100%),
+    linear-gradient(to bottom, transparent 0, #000 24px, #000 calc(100% - 24px), transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-image:
+    linear-gradient(to right, transparent 0, #000 24px, #000 calc(100% - 24px), transparent 100%),
+    linear-gradient(to bottom, transparent 0, #000 24px, #000 calc(100% - 24px), transparent 100%);
+  mask-composite: intersect;
+}
+
+@media (max-width: 50rem) {
+  .spring { padding: 3.5rem 0; }
+  /* The top corner brush collides with the kicker once the column narrows */
+  .spring::before { display: none; }
+  .spring-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .spring .doodle { display: none; }
+  .spring-art { max-width: 26rem; margin-inline: auto; }
+}
 
 /* --------------------------------------------------------------------------
    Sections
