@@ -23,11 +23,12 @@ The club balances competitive aspirations with grassroots values, welcoming repr
 | Treasurer | Danielle Tonks |
 | Coach Coordinator | Samantha Monaghan |
 | Umpire Coordinator | Amelia Milvain |
-| Registrations Coordinator | Tarryn Purcell |
+| Registrations Coordinator | Melissa Colosimo |
 | Child Safe Coordinator | Amelia Milvain |
 | Property Coordinator | Tess Collyer |
 | Fundraising / Sponsorship | Linda Rintoul |
-| Uniform Coordinator | Renee Green |
+| Uniform Coordinator | Charmaine Kruger |
+| Website / Social Media | &mdash; |
 
 ## Life members
 
