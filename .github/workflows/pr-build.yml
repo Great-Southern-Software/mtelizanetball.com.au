@@ -1,0 +1,18 @@
+name: PR Build Check
+
+# Gives pull requests a CI gate: github-worker refuses to auto-merge a PR
+# with no checks, and deploy.yml only runs on push to main. Same Roq build
+# as the deploy, without the Pages deployment.
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Generate Roq Site
+        uses: quarkiverse/quarkus-roq@v1.1
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
