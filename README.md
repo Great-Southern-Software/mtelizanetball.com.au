@@ -31,6 +31,7 @@ Output lands in `target/roq/`.
 | Styles | `public/css/main.css` |
 | Images / PDFs | `public/images/`, `public/docs/` |
 | Site config | `config/application.properties` |
+| Fixtures data | `data/fixtures.json` (generated, see below) |
 
 ## Deployment
 
@@ -38,4 +39,22 @@ Pushing to `main` triggers `.github/workflows/deploy.yml`, which builds the site
 Roq GitHub Action and publishes it to GitHub Pages. One-time setup in the GitHub repo:
 **Settings → Pages → Build and deployment → Source: GitHub Actions**.
 
-The workflow also runs daily at 05:00 UTC so future-dated news posts publish automatically.
+The workflow also runs daily at 05:00 UTC so future-dated news posts publish automatically
+and the fixtures page picks up the latest results.
+
+## Fixtures & results
+
+`content/fixtures.html` renders `data/fixtures.json`, which `scripts/fetch_fixtures.py`
+pulls from NetballConnect (the FDNA draw, our results and the division ladders). The deploy
+workflow runs the script before every build; it is best effort, so if NetballConnect is
+unreachable the last committed JSON is used. To refresh locally:
+
+```bash
+python3 scripts/fetch_fixtures.py   # Python 3.9+, standard library only
+```
+
+The script picks the current year's FDNA competition whose name contains "Saturday" and
+the teams whose names start with `MENC`. Override with `FIXTURES_COMPETITION_KEY`,
+`FIXTURES_COMPETITION_MATCH`, `FIXTURES_TEAM_PREFIX` or `FIXTURES_YEAR` if that changes.
+NetballConnect has no official API: the script uses the same public endpoints and public
+token as its own draw pages, so it may need attention if NetballConnect changes.

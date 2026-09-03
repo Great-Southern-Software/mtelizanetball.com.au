@@ -929,3 +929,190 @@ h2.title::after {
   gap: 0.5rem 2rem;
   justify-content: space-between;
 }
+
+/* --------------------------------------------------------------------------
+   Fixtures & results — rendered from data/fixtures.json (see scripts/).
+   -------------------------------------------------------------------------- */
+.fixtures .section.tight { padding: 2.75rem 0; }
+.fixtures .section-head { margin-bottom: 1.5rem; }
+.fx-alt { background: var(--white); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+
+.fx-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 0.5rem 2rem;
+}
+.fx-head .section-head { margin-bottom: 1.25rem; }
+.fx-updated { margin: 0 0 1.25rem; color: var(--muted); font-size: 0.95rem; }
+
+.fx-day, .fx-sub {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.35rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 1.5rem 0 0.6rem;
+}
+.fx-day:first-of-type { margin-top: 0; }
+.fx-sub { margin-top: 0; }
+.fx-muted { color: var(--muted); font-weight: 400; }
+.fx-empty { color: var(--muted); font-style: italic; margin: 0; }
+.fx-fine { color: var(--muted); font-size: 0.9rem; max-width: 46rem; margin: 0; }
+.fx-links { margin: 0.9rem 0 0; font-size: 0.95rem; }
+
+.fx-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+.fx-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--white);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  font-size: 0.97rem;
+}
+.fx-table th {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  text-align: left;
+  background: var(--black);
+  color: var(--white);
+  padding: 0.6rem 0.9rem;
+  white-space: nowrap;
+}
+.fx-table td {
+  padding: 0.6rem 0.9rem;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+.fx-table tr:last-child td { border-bottom: none; }
+.fx-table td small { display: block; color: var(--muted); font-size: 0.8rem; margin-top: 0.1rem; }
+.fx-table .fx-team a { font-weight: 600; text-decoration: none; color: var(--ink); }
+.fx-table .fx-team a:hover { color: var(--red-ink); }
+.fx-time, .fx-when, .fx-table .fx-team { white-space: nowrap; }
+.fx-upcoming td, .fx-season td { white-space: nowrap; }
+.fx-time { font-family: var(--font-display); font-size: 1.15rem; font-weight: 600; }
+.fx-court { font-weight: 600; white-space: nowrap; }
+.fx-result { white-space: nowrap; }
+.fx-score { font-family: var(--font-display); font-size: 1.1rem; font-weight: 600; margin-left: 0.25rem; }
+.fx-bye td { color: var(--muted); }
+.fx-flag {
+  display: inline-block;
+  margin-left: 0.3rem;
+  padding: 0.05rem 0.4rem;
+  border-radius: 999px;
+  background: var(--gold);
+  color: var(--black);
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  vertical-align: middle;
+}
+
+.fx-ladder td, .fx-ladder th { text-align: center; padding-inline: 0.55rem; }
+.fx-ladder td.fx-team, .fx-ladder th:nth-child(2) { text-align: left; }
+.fx-ladder tr.us td { background: #FFF6DF; font-weight: 600; }
+.fx-ladder tr.us td:first-child { box-shadow: inset 4px 0 0 var(--gold); }
+
+/* Outcome pills: W gold, L ink, D outline, played/bye muted */
+.res {
+  display: inline-block;
+  min-width: 1.7rem;
+  padding: 0.1rem 0.45rem;
+  border-radius: 999px;
+  text-align: center;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  line-height: 1.4;
+  border: 1.5px solid transparent;
+}
+.res.W { background: var(--gold); color: var(--black); }
+.res.L { background: var(--black); color: var(--white); }
+.res.D { border-color: var(--black); color: var(--black); background: var(--white); }
+.res.P, .res.BYE { background: var(--line); color: var(--muted); }
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  gap: 1.1rem;
+}
+.team-card {
+  display: block;
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.35rem;
+  box-shadow: var(--shadow);
+  border-top: 4px solid var(--red);
+  color: var(--ink);
+  text-decoration: none;
+  transition: transform 0.15s ease;
+}
+.team-card:hover { transform: translateY(-3px); color: var(--ink); }
+.team-card:hover h3 { color: var(--red-ink); }
+.team-card .kicker {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  color: var(--red-ink);
+  margin: 0 0 0.15rem;
+}
+.team-card h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.7rem;
+  text-transform: uppercase;
+  margin: 0 0 0.4rem;
+  line-height: 1;
+}
+.team-card p { margin: 0.3rem 0; font-size: 0.93rem; }
+.team-stat strong { color: var(--ink); }
+.team-next { color: var(--muted); font-size: 0.88rem; }
+.team-record { display: flex; gap: 0.35rem; margin: 0.5rem 0 !important; }
+.team-record.lg { margin: 0 0 1.25rem !important; }
+.team-record.lg .res { font-size: 1rem; padding: 0.2rem 0.7rem; }
+
+.fx-next { margin: 0 0 0.6rem; font-size: 0.97rem; }
+.fx-next strong { font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.85rem; color: var(--red-ink); margin-right: 0.2rem; }
+
+.fx-details { margin-top: 0.9rem; }
+.fx-details summary {
+  cursor: pointer;
+  list-style: none;
+  display: inline-block;
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  color: var(--red-ink);
+  border-bottom: 2px solid var(--gold);
+  padding-bottom: 0.1rem;
+  margin-bottom: 0.9rem;
+}
+.fx-details summary::-webkit-details-marker { display: none; }
+.fx-details summary::before { content: "+ "; }
+.fx-details[open] summary::before { content: "\2013 "; }
+
+.fx-split {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+  gap: 2rem;
+  align-items: start;
+}
+@media (max-width: 60rem) {
+  .fx-split { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 30rem) {
+  .fx-ladder td:nth-child(7), .fx-ladder th:nth-child(7) { display: none; }
+}

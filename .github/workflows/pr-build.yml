@@ -12,6 +12,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Refresh fixtures from NetballConnect
+        # Best effort: if NetballConnect is down or changes shape, the build
+        # falls back to the data/fixtures.json committed in the repo.
+        continue-on-error: true
+        run: python3 scripts/fetch_fixtures.py
       - name: Generate Roq Site
         uses: quarkiverse/quarkus-roq@v1.1
         with:

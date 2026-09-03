@@ -19,6 +19,6 @@ Keep across club and FDNA events for the season: training start, first games, ho
 
 ## Game times
 
-FDNA fixtures, game times and courts are published on the association's fixture portal.
+Game times, courts, results and ladders for every MENC team are on our fixtures page, refreshed each morning from NetballConnect.
 
-[Find your game time](https://websites.sportstg.com/assoc_page.cgi?c=0-44-0-0-0&a=COMPS&seasonID=6018660)
+[Fixtures & results]({=site.url('fixtures')})

@@ -1,0 +1,183 @@
+---
+title: "Fixtures & Results"
+description: "Game times, results and ladders for every Mt Eliza team in the FDNA Saturday competition."
+layout: default
+---
+{@io.quarkiverse.roq.frontmatter.runtime.model.Page page}
+{@io.quarkiverse.roq.frontmatter.runtime.model.Site site}
+{#let fx=cdi:fixtures}
+<section class="page-banner">
+  <div class="container">
+    <p class="eyebrow">{=fx.competition.name} &middot; FDNA</p>
+    <h1>{=page.title}</h1>
+    <p>{=page.description}</p>
+  </div>
+</section>
+
+<main class="fixtures">
+  <section class="section tight">
+    <div class="container">
+      <div class="fx-head">
+        <div class="section-head">
+          <p class="eyebrow">Coming up</p>
+          <h2 class="title">Next games</h2>
+        </div>
+        <p class="fx-updated">Updated {=fx.updated} from <a href="{=fx.netballConnectUrl}">NetballConnect</a></p>
+      </div>
+      {#if fx.seasonComplete}
+      <p class="fx-empty">No more games scheduled. That's a wrap on {=fx.competition.name}. Thanks to every player, coach, umpire and parent.</p>
+      {#else}
+      {#for day in fx.upcoming}
+      <h3 class="fx-day">{=day.date}</h3>
+      <div class="fx-scroll">
+        <table class="fx-table fx-upcoming">
+          <thead><tr><th>Time</th><th>Team</th><th>Opponent</th><th>Round</th><th>Court</th></tr></thead>
+          <tbody>
+          {#for m in day.matches}
+          <tr>
+            <td class="fx-time">{=m.time}</td>
+            <td class="fx-team"><a href="#team-{=m.teamSlug}">{=m.team}</a><small>{=m.division}</small></td>
+            <td>{=m.opponent}</td>
+            <td>{=m.round}{#if m.finals} <span class="fx-flag">Finals</span>{/if}</td>
+            <td><span class="fx-court">{=m.court}</span><small>{=m.venue}</small></td>
+          </tr>
+          {/for}
+          </tbody>
+        </table>
+      </div>
+      {/for}
+      {/if}
+    </div>
+  </section>
+
+  {#if fx.latest??}
+  <section class="section tight fx-alt">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">{=fx.latest.date}</p>
+        <h2 class="title">Latest results</h2>
+      </div>
+      <div class="fx-scroll">
+        <table class="fx-table">
+          <thead><tr><th>Team</th><th>Result</th><th>Opponent</th><th>Round</th></tr></thead>
+          <tbody>
+          {#for m in fx.latest.results}
+          <tr>
+            <td class="fx-team"><a href="#team-{=m.teamSlug}">{=m.team}</a><small>{=m.division}</small></td>
+            <td class="fx-result">{#include partials/fixture-result m=m /}</td>
+            <td>{=m.opponent}</td>
+            <td>{=m.round}{#if m.finals} <span class="fx-flag">Finals</span>{/if}</td>
+          </tr>
+          {/for}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+  {/if}
+
+  <section class="section tight">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Season {=fx.competition.year}</p>
+        <h2 class="title">Our teams</h2>
+      </div>
+      <div class="team-grid">
+        {#for t in fx.teams}
+        <a class="team-card" href="#team-{=t.slug}">
+          <p class="kicker">{=t.division}</p>
+          <h3>{=t.shortName}</h3>
+          <p class="team-stat">
+            {#if t.ladderLabel}<strong>{=t.ladderLabel}</strong> on the ladder{#else}<span class="fx-muted">Ladder not published</span>{/if}
+          </p>
+          {#if t.scored}
+          <p class="team-record"><span class="res W">{=t.won}</span><span class="res L">{=t.lost}</span><span class="res D">{=t.drawn}</span></p>
+          {#else}
+          <p class="team-record"><span class="res P">{=t.played} played</span></p>
+          {/if}
+          <p class="team-next">
+            {#if t.nextMatch??}Next: {=t.nextMatch.date}, {=t.nextMatch.time} v {=t.nextMatch.opponent}
+            {#else if t.lastMatch??}Last: {#include partials/fixture-result m=t.lastMatch /} v {=t.lastMatch.opponent}
+            {#else}No games yet{/if}
+          </p>
+        </a>
+        {/for}
+      </div>
+    </div>
+  </section>
+
+  {#for t in fx.teams}
+  <section class="section tight fx-team-detail {#if t_odd}fx-alt{/if}" id="team-{=t.slug}">
+    <div class="container">
+      <div class="fx-head">
+        <div class="section-head">
+          <p class="eyebrow">{=t.division}</p>
+          <h2 class="title">{=t.shortName}</h2>
+        </div>
+        {#if t.scored}
+        <p class="team-record lg"><span class="res W">{=t.won} W</span><span class="res L">{=t.lost} L</span><span class="res D">{=t.drawn} D</span></p>
+        {#else}
+        <p class="team-record lg"><span class="res P">{=t.played} games played</span></p>
+        {/if}
+      </div>
+      <div class="fx-split">
+        <div>
+          <h3 class="fx-sub">Results &amp; fixtures</h3>
+          {#if t.nextMatch??}
+          <p class="fx-next"><strong>Next:</strong> {=t.nextMatch.date}, {=t.nextMatch.time} v {=t.nextMatch.opponent} &middot; {=t.nextMatch.court}, {=t.nextMatch.venue}</p>
+          {/if}
+          {#if t.lastMatch??}
+          <p class="fx-next"><strong>Last:</strong> {#include partials/fixture-result m=t.lastMatch /} v {=t.lastMatch.opponent} &middot; {=t.lastMatch.round}</p>
+          {/if}
+          <details class="fx-details">
+          <summary>All {=t.matches.size} games this season</summary>
+          <div class="fx-scroll">
+            <table class="fx-table fx-season">
+              <thead><tr><th>Round</th><th>Date</th><th>Opponent</th><th>Result</th><th>Court</th></tr></thead>
+              <tbody>
+              {#for m in t.matches}
+              <tr{#if m.bye} class="fx-bye"{/if}>
+                <td>{=m.round}{#if m.finals} <span class="fx-flag">Finals</span>{/if}</td>
+                <td class="fx-when">{=m.date}<small>{=m.time}</small></td>
+                <td>{=m.opponent}</td>
+                <td class="fx-result">{#include partials/fixture-result m=m /}</td>
+                <td>{#if !m.bye}<span class="fx-court">{=m.court}</span>{/if}</td>
+              </tr>
+              {/for}
+              </tbody>
+            </table>
+          </div>
+          </details>
+        </div>
+        <div>
+          <h3 class="fx-sub">Ladder <span class="fx-muted">{=t.division}</span></h3>
+          {#if t.ladder.hidden}
+          <p class="fx-empty">FDNA doesn't publish a ladder for this division.</p>
+          {#else}
+          <div class="fx-scroll">
+            <table class="fx-table fx-ladder">
+              <thead><tr><th>#</th><th>Team</th><th>P</th><th>W</th><th>L</th><th>D</th><th>%</th><th>Pts</th></tr></thead>
+              <tbody>
+              {#for r in t.ladder.rows}
+              <tr{#if r.us} class="us"{/if}>
+                <td>{=r.rank}</td><td class="fx-team">{=r.name}</td><td>{=r.P}</td><td>{=r.W}</td><td>{=r.L}</td><td>{=r.D}</td><td>{=r.pct}</td><td><strong>{=r.PTS}</strong></td>
+              </tr>
+              {/for}
+              </tbody>
+            </table>
+          </div>
+          {/if}
+          <p class="fx-links"><a href="{=fx.ladderUrl}">All FDNA ladders on NetballConnect &rarr;</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+  {/for}
+
+  <section class="section tight">
+    <div class="container">
+      <p class="fx-fine">Fixtures, results and ladders are published by the {=fx.association} on NetballConnect and refreshed here each morning. Always check <a href="{=fx.netballConnectUrl}">NetballConnect</a> or the NetballConnect app for last-minute changes on game day.</p>
+    </div>
+  </section>
+</main>
+{/let}
